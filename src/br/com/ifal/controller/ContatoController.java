@@ -1,5 +1,22 @@
 package br.com.ifal.controller;
 
-public class ContatoController {
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.ifal.core.Contato;
+import br.com.ifal.dao.ContatoDAO;
+
+@Controller
+public class ContatoController {
+	
+	@RequestMapping("novoContato")
+	public String form(){
+		return "novo";
+	}
+	
+	@RequestMapping("adicionaContato")
+	public String novo(Contato contato){
+		ContatoDAO.getInstance().addTarefa(contato);
+		return "lista";
+	}
 }
