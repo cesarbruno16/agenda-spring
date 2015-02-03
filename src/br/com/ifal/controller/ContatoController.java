@@ -11,12 +11,12 @@ public class ContatoController {
 	
 	@RequestMapping("novoContato")
 	public String form(){
-		return "novo";
+		return "contato/novo";
 	}
 	
 	@RequestMapping("adicionaContato")
 	public String novo(Contato contato){
 		ContatoDAO.getInstance().addTarefa(contato);
-		return "lista";
+		return "contato/lista";
 	}
 }
