@@ -16,6 +16,9 @@
 	<!-- Pacote base da aplicação web -->
 	<context:component-scan base-package="br.com.ifal"/>
 	
+	<!-- Mapeando o conteudo da pasta /resources/css/ -->
+	<mvc:resources mapping="/resources/**" location="/resources/css/" />
+	
 	<!-- Local onde estarão os arquivos JSP -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     	<property name="prefix" value="/WEB-INF/views/"/>

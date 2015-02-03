@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<link href="<c:url value="/resources/style.css"/>" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Contatos</title>
 </head>
@@ -11,10 +12,12 @@
 	<table>
 		<tr><th>#</th><th>Nome</th><th>E-mail</th></tr>
 		<c:forEach items="${contatos}" var="contato">
-			<td>${contato.id}</td>
+			<tr><td>${contato.id}</td>
 			<td>${contato.nome}</td>
-			<td>${contato.email}</td>
+			<td>${contato.email}</td></tr>
 		</c:forEach> 
-		</table>
+	</table>
+	<br/>
+	<a href="novoContato">Novo contato</a>
 </body>
 </html>
