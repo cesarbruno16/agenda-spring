@@ -3,6 +3,7 @@ package br.com.ifal.controller;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,11 +19,20 @@ public class ContatoController {
 	}
 	
 	@RequestMapping("adicionaContato")
-	public String novo(@Valid Contato contato, BindingResult result){
+	public String novo(@Valid Contato contato, BindingResult result, Model model){
 		if (result.hasFieldErrors("nome") | result.hasFieldErrors("email")){
 			return "contato/novo";
 		}		
 		ContatoDAO.getInstance().addTarefa(contato);
+		model.addAttribute("contatos", ContatoDAO.getInstance().getContatos());
+		return "contato/lista";
+	}
+	
+	@RequestMapping("listaContato")
+	public String lista(Model model){
+		/* Esse objeto do tipo model funcionará de maneira semelhante ao Map<>,
+		 * quando for requisitado ${contatos}, o retorno é a lista de contatos*/
+		model.addAttribute("contatos", ContatoDAO.getInstance().getContatos());
 		return "contato/lista";
 	}
 }
