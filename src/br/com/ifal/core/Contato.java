@@ -1,9 +1,18 @@
 package br.com.ifal.core;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+
 public class Contato {
 
 	private int id;
+	@NotNull (message="O nome deve ter no mínimo 3 caracteres!")
+	@Size (min=3, message="O nome deve ter no mínimo 3 caracteres!") 
 	private String nome;
+	@NotNull (message="Insira um endereço de e-mail válido!")
+	@Email (message="Insira um endereço de e-mail válido!")
 	private String email;
 
 	public int getId() {
