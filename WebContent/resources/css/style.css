@@ -1,0 +1,31 @@
+body {
+	margin-left: 20px;
+	padding: 10px;
+	font-family: verdana, arial;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid #3949AB;
+	padding: 5px;
+}
+
+th {
+	background-color: #3F51B5;
+	color: #E8EAF6;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+textarea {
+	margin-top: 4px;
+	
+	margin-bottom: 5px;
+	
+	margin-left: -1px;
+}
