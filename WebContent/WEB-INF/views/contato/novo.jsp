@@ -11,6 +11,7 @@
 	</head>
 	<body>
 		<form action="adicionaContato" method="post">
+			<!-- contato.nome é o equivalente a objeto.getAtributo() dentro do método novo()-->
 			<form:errors path="contato.nome" cssStyle="color:red"/><br/>
 			Nome: <input name="nome" type="text"><br/>
 			<form:errors path="contato.email" cssStyle="color:red"/><br/>

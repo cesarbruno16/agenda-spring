@@ -8,6 +8,8 @@ import org.hibernate.validator.constraints.Email;
 public class Contato {
 
 	private int id;
+	/*Estas anotações servem para validação, serão utilizadas somente quando existir
+	 * a anotação @Valid*/
 	@NotNull (message="O nome deve ter no mínimo 3 caracteres!")
 	@Size (min=3, message="O nome deve ter no mínimo 3 caracteres!") 
 	private String nome;

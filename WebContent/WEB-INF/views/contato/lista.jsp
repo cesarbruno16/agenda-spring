@@ -11,6 +11,7 @@
 <body>
 	<table>
 		<tr><th>#</th><th>Nome</th><th>E-mail</th></tr>
+		<!-- Esse "contatos" vem de model.addAttribute() -->
 		<c:forEach items="${contatos}" var="contato">
 			<tr><td>${contato.id}</td>
 			<td>${contato.nome}</td>
