@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="war" name="agenda-spring">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="Server Library [Apache Tomcat v8.0] (unbound).libraryclasspath"/>
+    <path id="Web App Libraries.libraryclasspath">
+        <pathelement location="WebContent/WEB-INF/lib/commons-logging-1.2.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/hibernate-validator-4.2.0.Final.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/hibernate-validator-annotation-processor-4.2.0.Final.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-1.2.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-api-1.2.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/spring-aop-4.1.4.RELEASE.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/spring-beans-4.1.4.RELEASE.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/spring-context-4.1.4.RELEASE.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/spring-core-4.1.4.RELEASE.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/spring-expression-4.1.4.RELEASE.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/spring-web-4.1.4.RELEASE.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/spring-webmvc-4.1.4.RELEASE.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/validation-api-1.0.0.GA.jar"/>
+    </path>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="agenda-spring.classpath">
+        <pathelement location="build/classes"/>
+        <path refid="Server Library [Apache Tomcat v8.0] (unbound).libraryclasspath"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/websocket-api.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-websocket.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-util.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-util-scan.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-spdy.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-jni.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-jdbc.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/tomcat-api.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/servlet-api.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/jsp-api.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/jasper.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/jasper-el.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/el-api.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/ecj-4.4.1.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/catalina.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/catalina-tribes.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/catalina-storeconfig.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/catalina-ha.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/catalina-ant.jar"/>
+        <pathelement location="../../servers/apache-tomcat-8.0.20/lib/annotations-api.jar"/>
+    </path>
+   
+    <path id="run.DBConnect.classpath">
+        <path refid="agenda-spring.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="build/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="agenda-spring.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+	
+	<target name="war" description="Bundles the application as a WAR file" depends="clean, build">
+	    <mkdir dir="WebContent/WEB-INF/classes"/>
+	     
+	    <copy includeemptydirs="false" todir="WebContent/WEB-INF/views">
+	            <fileset dir="build/classes">
+	            <include name="**/*.class"/>
+	            </fileset>
+	    </copy>
+	     
+	    <war destfile="agenda.war" webxml="/home/marina/dev/jenkins-test/agenda-spring/WebContent/WEB-INF/web.xml"
+	        basedir="WebContent"
+	        needxmlfile="false">
+	    </war>
+	
+	</target>
+</project>
